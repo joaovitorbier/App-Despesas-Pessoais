@@ -23,19 +23,22 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.purple,
         title: Text('Despesas Pessoais'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            width: double.infinity,
-            child: Card(
-              child: Text("Gráfico", style: TextStyle(fontSize: 23)),
-              elevation: 10,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              width: double.infinity,
+              child: Card(
+                child: Text("Adicione nova despesa",
+                    style: TextStyle(fontSize: 23)),
+                elevation: 10,
+              ),
             ),
-          ),
-          TransactionUser(),
-        ],
+            TransactionUser(),
+          ],
+        ),
       ),
     );
   }

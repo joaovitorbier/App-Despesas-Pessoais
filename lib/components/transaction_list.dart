@@ -9,11 +9,13 @@ class TransactionList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        ..._transaction.map((e) {
+    return Container(
+      height: 450,
+      child: ListView.builder(
+        itemCount: _transaction.length,
+        itemBuilder: (ctx, index) {
+          final e = _transaction[index];
+
           return Card(
               child: Row(
             children: [
@@ -51,8 +53,8 @@ class TransactionList extends StatelessWidget {
               )
             ],
           ));
-        }).toList()
-      ],
+        },
+      ),
     );
   }
 }
